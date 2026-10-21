@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fantômes — Débusque les abonnements que tu paies sans t'en servir</title>
+<meta name="description" content="Dépose ton relevé : Fantômes repère les prélèvements oubliés, les classe par coût annuel et rédige les lettres de résiliation. Précommande à 19 €, remboursé si tu n'es pas satisfait.">
+<meta name="theme-color" content="#F6F1E7">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Fantômes">
+<meta property="og:title" content="Fantômes — Débusque les abonnements que tu paies sans t'en servir">
+<meta property="og:description" content="Repère les prélèvements oubliés, classés par coût annuel, avec la lettre de résiliation prête. Précommande 19 €, remboursé si tu n'es pas satisfait.">
+<meta property="og:image" content="__SITE_URL__/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F6F1E7; --paper:#FBF8F1; --ink:#1B1A17; --mute:#5C584E; --line:#DDD4C2; --moss:#3F6B4F; --moss-dark:#2F5239;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;padding-bottom:88px}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.12;margin:0;letter-spacing:-0.01em}
+h1{font-size:clamp(34px,9vw,52px)}
+h2{font-size:clamp(26px,6.5vw,34px)}
+h3{font-size:20px;font-weight:600}
+p{margin:0}
+header{padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:22px}
+.brand svg{width:30px;height:30px}
+.hero{padding:20px 0 40px}
+.hero h1{margin-bottom:18px}
+.lead{font-size:20px;color:var(--ink);margin-bottom:28px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:58px;padding:14px 22px;background:var(--moss);color:#fff;font:600 19px/1.2 var(--sans);text-align:center;text-decoration:none;border-radius:12px;border:0;box-shadow:0 2px 0 var(--moss-dark)}
+.btn:hover{background:var(--moss-dark)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.fine{font-size:15px;color:var(--mute);margin-top:12px;text-align:center}
+section{padding:36px 0;border-top:1px solid var(--line)}
+section h2{margin-bottom:18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:6px 18px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row span:last-child{font-weight:600;white-space:nowrap}
+.total{font-family:var(--display);font-weight:700;font-size:22px}
+.note{font-size:15px;color:var(--mute);margin-top:12px}
+.benefits{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.benefits li{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px}
+.benefits h3{margin-bottom:6px}
+.benefits p{color:var(--mute);font-size:17px}
+ol.steps{margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:16px}
+ol.steps li{counter-increment:s;padding-left:52px;position:relative}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--cream);font:700 18px/36px var(--display);text-align:center}
+ol.steps strong{display:block}
+.guarantee{background:var(--ink);color:var(--cream);border-radius:16px;padding:24px 22px;margin:0}
+.guarantee h2{color:var(--cream);margin-bottom:12px}
+.guarantee p+p{margin-top:12px}
+.guarantee a{color:var(--cream)}
+.preorder{background:var(--paper);border:1px dashed var(--moss);border-radius:14px;padding:18px}
+.preorder strong{font-family:var(--display);font-size:20px}
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;font-weight:600;padding:16px 28px 16px 0;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:26px;font-weight:400;color:var(--moss)}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 16px;color:var(--mute)}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);font-size:15px;color:var(--mute)}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(246,241,231,.97);border-top:1px solid var(--line)}
+.sticky .btn{max-width:640px;margin:0 auto}
+@media(min-width:768px){
+  body{font-size:19px;padding-bottom:0}
+  .sticky{display:none}
+  .btn{width:auto;display:inline-flex;min-width:340px}
+  .fine{text-align:left}
+  .hero{padding:48px 0 56px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 5C20 5 11 14 11 26v31l7-5 7 5 7-5 7 5 7-5 7 5V26C53 14 44 5 32 5z" fill="#1B1A17"/><circle cx="24" cy="27" r="4" fill="#F6F1E7"/><circle cx="40" cy="27" r="4" fill="#F6F1E7"/></svg>
+      Fantômes
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Débusque les abonnements que tu paies sans t'en servir.</h1>
+    <p class="lead">Dépose ton relevé bancaire : Fantômes repère les prélèvements oubliés, les classe par coût annuel et rédige la lettre de résiliation de chacun.</p>
+    <a class="btn" href="https://buy.stripe.com/test_4gMeV565MgWxc4c0BJfjG00">Précommander mon audit · 19&nbsp;€</a>
+    <p class="fine">Paiement unique, pas d'abonnement. Remboursé si tu n'es pas satisfait.</p>
+  </div>
+
+  <section>
+    <h2>9,99&nbsp;€ par mois, ça ne se voit pas. 120&nbsp;€ par an, si.</h2>
+    <p style="margin-bottom:18px">Un essai jamais résilié, un service remplacé, une option activée une seule fois : chaque prélèvement est trop petit pour être remarqué sur un relevé, et il tourne des années.</p>
+    <div class="card" aria-label="Exemple fictif de trois abonnements oubliés">
+      <div class="row"><span>Un essai jamais résilié<br><small style="color:var(--mute)">6,99&nbsp;€ par mois</small></span><span>≈ 84&nbsp;€ / an</span></div>
+      <div class="row"><span>Une option activée une fois<br><small style="color:var(--mute)">2,99&nbsp;€ par mois</small></span><span>≈ 36&nbsp;€ / an</span></div>
+      <div class="row"><span>Un service remplacé<br><small style="color:var(--mute)">12,99&nbsp;€ par mois</small></span><span>≈ 156&nbsp;€ / an</span></div>
+      <div class="row total"><span>Total</span><span>≈ 276&nbsp;€ / an</span></div>
+    </div>
+    <p class="note">Exemple fictif, pour se représenter l'effet. Ton total à toi dépend de ton relevé.</p>
+  </section>
+
+  <section>
+    <h2>Ce que tu obtiens</h2>
+    <ul class="benefits">
+      <li><h3>Une liste classée par coût annuel</h3><p>Tu vois d'abord ce qui coûte le plus sur l'année, pas sur le mois. Tu sais par où commencer.</p></li>
+      <li><h3>Une lettre de résiliation prête</h3><p>Pour chaque abonnement détecté, un courrier déjà rédigé. Tu n'as qu'à l'envoyer.</p></li>
+      <li><h3>Ton relevé reste chez toi</h3><p>L'analyse se fait sur ton appareil : ton relevé n'est ni envoyé ni stocké chez nous.</p></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Comment ça marche</h2>
+    <ol class="steps">
+      <li><strong>Exporte ton relevé</strong>Depuis l'espace en ligne de ta banque, au format CSV.</li>
+      <li><strong>Dépose-le</strong>Les prélèvements réguliers sont repérés et classés.</li>
+      <li><strong>Résilie</strong>Envoie la lettre de chaque abonnement dont tu ne te sers plus.</li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="preorder">
+      <strong>C'est une précommande.</strong>
+      <p style="margin-top:8px">L'outil est en cours de finalisation. Tu paies aujourd'hui 19&nbsp;€ et tu reçois ton accès par email sous 14 jours.</p>
+    </div>
+  </section>
+
+  <section style="border-top:0;padding-top:0">
+    <div class="guarantee">
+      <h2>Satisfait ou remboursé, 14 jours</h2>
+      <p>Tu reçois ton accès et tu l'essaies sur ton propre relevé. Si le résultat ne te convient pas, écris à <a href="mailto:inesmunoz83140@gmail.com">inesmunoz83140@gmail.com</a> dans les 14 jours après la réception. Je te rembourse les 19&nbsp;€ sous 5 jours ouvrés, sans que tu aies à te justifier.</p>
+      <p>Si tu n'as rien reçu au bout de 14 jours, tu es aussi remboursé sur simple demande.</p>
+    </div>
+    <div style="margin-top:24px">
+      <a class="btn" href="https://buy.stripe.com/test_4gMeV565MgWxc4c0BJfjG00">Précommander mon audit · 19&nbsp;€</a>
+      <p class="fine">Paiement unique de 19&nbsp;€. Pas d'abonnement, rien à résilier.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Questions fréquentes</h2>
+    <details>
+      <summary>Est-ce que ça marche avec ma banque ?</summary>
+      <p>Il faut pouvoir exporter ton relevé au format CSV depuis l'espace en ligne de ta banque, ce que la plupart proposent. Les relevés PDF ne sont pas pris en charge pour l'instant. Si ta banque ne propose pas de CSV, tu es remboursé.</p>
+    </details>
+    <details>
+      <summary>Combien de temps ça me prend ?</summary>
+      <p>Le temps d'exporter ton relevé et de le déposer : quelques minutes. La liste s'affiche ensuite tout de suite.</p>
+    </details>
+    <details>
+      <summary>Et si je veux arrêter ?</summary>
+      <p>Il n'y a rien à arrêter : tu paies une seule fois, aucun abonnement n'est créé et aucun prélèvement n'aura lieu ensuite.</p>
+    </details>
+    <details>
+      <summary>À quoi sert exactement ce que je paie ?</summary>
+      <p>À l'accès à l'outil : l'analyse de ton relevé, la liste de tes abonnements classée par coût annuel, et une lettre de résiliation pour chacun. Il est livré par email sous 14 jours, puisque c'est une précommande.</p>
+    </details>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© Fantômes</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn" href="https://buy.stripe.com/test_4gMeV565MgWxc4c0BJfjG00">Précommander · 19&nbsp;€</a>
+</div>
+
+</body>
+</html>
